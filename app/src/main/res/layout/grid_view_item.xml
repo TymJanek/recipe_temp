@@ -60,6 +60,19 @@
                 android:textSize="18sp"
                 tools:text="sample title" />
 
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto"
+                android:scaleType="centerCrop"
+                android:text="@{property.component4()}"
+                android:textColor="@color/fontColor"
+                android:textSize="18sp"
+                tools:text="sample time" />
+
+
 
         </GridLayout>
 

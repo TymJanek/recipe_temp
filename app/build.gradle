@@ -49,6 +49,10 @@ android {
     }
 }
 
+task wrapper(type: Wrapper){
+    gradleVersion = '2.14.1'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

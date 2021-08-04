@@ -31,6 +31,7 @@ data class MarsProperty(
         val id: String,
         // used to map img_src from the JSON to imgSrcUrl in our class
         val title: String,
-        val desc: String) : Parcelable {
+        val desc: String,
+        val time: String) : Parcelable {
 
         }
