@@ -49,7 +49,7 @@ class OverviewFragment : Fragment() {
         // TODO (10) Switch to inflating GridViewItemBinding
         val binding = FragmentOverviewBinding.inflate(inflater)
 
-        binding.photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener {
+        binding.photosGrid.adapter = RecipeAdapter(RecipeAdapter.OnClickListener {
             viewModel.displayPropertyDetails(it)
         })
 

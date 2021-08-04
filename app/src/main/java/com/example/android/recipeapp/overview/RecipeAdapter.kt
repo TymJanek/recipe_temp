@@ -26,16 +26,16 @@ import com.example.android.recipeapp.databinding.GridViewItemBinding
 import com.example.android.recipeapp.network.RecipeProperty
 
 
-class PhotoGridAdapter(val onClickListener: OnClickListener) : ListAdapter<RecipeProperty, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoGridAdapter.MarsPropertyViewHolder {
-        return MarsPropertyViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context)))
+class RecipeAdapter(val onClickListener: OnClickListener) : ListAdapter<RecipeProperty, RecipeAdapter.RecipeAdapterViewHolder>(DiffCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeAdapter.RecipeAdapterViewHolder {
+        return RecipeAdapterViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    override fun onBindViewHolder(holder: PhotoGridAdapter.MarsPropertyViewHolder, position: Int) {
-        val marsProperty = getItem(position)
-        holder.bind(marsProperty)
+    override fun onBindViewHolder(holder: RecipeAdapter.RecipeAdapterViewHolder, position: Int) {
+        val recipeProperty = getItem(position)
+        holder.bind(recipeProperty)
         holder.itemView.setOnClickListener {
-            onClickListener.onClick(marsProperty)
+            onClickListener.onClick(recipeProperty)
         }
     }
 
@@ -49,15 +49,15 @@ class PhotoGridAdapter(val onClickListener: OnClickListener) : ListAdapter<Recip
         }
     }
 
-    class MarsPropertyViewHolder(private var binding: GridViewItemBinding):
+    class RecipeAdapterViewHolder(private var binding: GridViewItemBinding):
             RecyclerView.ViewHolder(binding.root) {
-        fun bind(marsProperty: RecipeProperty) {
-            binding.property = marsProperty
+        fun bind(recipeProperty: RecipeProperty) {
+            binding.property = recipeProperty
             binding.executePendingBindings()
         }
     }
 
-    class OnClickListener(val clickListener: (marsProperty: RecipeProperty) -> Unit) {
+    class OnClickListener(val clickListener: (recipeProperty: RecipeProperty) -> Unit) {
         fun onClick(marsProperty:RecipeProperty) = clickListener(marsProperty)
     }
 

@@ -25,12 +25,12 @@ import com.example.android.recipeapp.network.RecipeProperty
  * Simple ViewModel factory that provides the MarsProperty and context to the ViewModel.
  */
 class DetailViewModelFactory(
-        private val marsProperty: RecipeProperty,
+        private val recipeProperty: RecipeProperty,
         private val application: Application) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            return DetailViewModel(marsProperty, application) as T
+            return DetailViewModel(recipeProperty, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
