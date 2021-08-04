@@ -15,18 +15,18 @@
  *
  */
 
-package com.example.android.marsrealestate.overview
+package com.example.android.recipeapp.overview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.marsrealestate.databinding.GridViewItemBinding
-import com.example.android.marsrealestate.network.MarsProperty
+import com.example.android.recipeapp.databinding.GridViewItemBinding
+import com.example.android.recipeapp.network.RecipeProperty
 
 
-class PhotoGridAdapter(val onClickListener: OnClickListener) : ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
+class PhotoGridAdapter(val onClickListener: OnClickListener) : ListAdapter<RecipeProperty, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoGridAdapter.MarsPropertyViewHolder {
         return MarsPropertyViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
@@ -39,26 +39,26 @@ class PhotoGridAdapter(val onClickListener: OnClickListener) : ListAdapter<MarsP
         }
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<MarsProperty>() {
-        override fun areItemsTheSame(oldItem: MarsProperty, newItem: MarsProperty): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<RecipeProperty>() {
+        override fun areItemsTheSame(oldItem: RecipeProperty, newItem: RecipeProperty): Boolean {
             return oldItem === newItem
         }
 
-        override fun areContentsTheSame(oldItem: MarsProperty, newItem: MarsProperty): Boolean {
+        override fun areContentsTheSame(oldItem: RecipeProperty, newItem: RecipeProperty): Boolean {
             return oldItem.id == newItem.id
         }
     }
 
     class MarsPropertyViewHolder(private var binding: GridViewItemBinding):
             RecyclerView.ViewHolder(binding.root) {
-        fun bind(marsProperty: MarsProperty) {
+        fun bind(marsProperty: RecipeProperty) {
             binding.property = marsProperty
             binding.executePendingBindings()
         }
     }
 
-    class OnClickListener(val clickListener: (marsProperty: MarsProperty) -> Unit) {
-        fun onClick(marsProperty:MarsProperty) = clickListener(marsProperty)
+    class OnClickListener(val clickListener: (marsProperty: RecipeProperty) -> Unit) {
+        fun onClick(marsProperty:RecipeProperty) = clickListener(marsProperty)
     }
 
 

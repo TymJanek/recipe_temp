@@ -14,18 +14,18 @@
  *  limitations under the License.
  */
 
-package com.example.android.marsrealestate.detail
+package com.example.android.recipeapp.detail
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.marsrealestate.network.MarsProperty
+import com.example.android.recipeapp.network.RecipeProperty
 
 /**
  * Simple ViewModel factory that provides the MarsProperty and context to the ViewModel.
  */
 class DetailViewModelFactory(
-        private val marsProperty: MarsProperty,
+        private val marsProperty: RecipeProperty,
         private val application: Application) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

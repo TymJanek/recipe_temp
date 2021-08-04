@@ -15,10 +15,9 @@
  *
  */
 
-package com.example.android.marsrealestate.network
+package com.example.android.recipeapp.network
 
 import android.os.Parcelable
-import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
 /**
@@ -27,7 +26,7 @@ import kotlinx.android.parcel.Parcelize
  * The property names of this data class are used by Moshi to match the names of values in JSON.
  */
 @Parcelize
-data class MarsProperty(
+data class RecipeProperty(
         val id: String,
         // used to map img_src from the JSON to imgSrcUrl in our class
         val title: String,

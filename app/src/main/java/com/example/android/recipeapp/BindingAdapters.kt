@@ -15,19 +15,21 @@
  *
  */
 
-package com.example.android.marsrealestate
+package com.example.android.recipeapp
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.marsrealestate.network.MarsProperty
-import com.example.android.marsrealestate.overview.PhotoGridAdapter
+import com.example.android.recipeapp.network.RecipeProperty
+import com.example.android.recipeapp.overview.PhotoGridAdapter
 
 // TODO (06) Create the Binding Adapter, converting the imgUrl to a URI with the https scheme
 // TODO (07) Use Glide to load the imgUri into the imgView
 // TODO (11) Add the requestOptions for the placeholder and error into the Glide call
 
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsProperty>?) {
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<RecipeProperty>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
     adapter.submitList(data)
 }
+
+

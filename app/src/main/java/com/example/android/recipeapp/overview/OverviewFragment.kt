@@ -15,16 +15,18 @@
  *
  */
 
-package com.example.android.marsrealestate.overview
+package com.example.android.recipeapp.overview
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.android.marsrealestate.R
-import com.example.android.marsrealestate.databinding.FragmentOverviewBinding
+import com.example.android.recipeapp.R
+import com.example.android.recipeapp.databinding.FragmentOverviewBinding
+
 
 /**
  * This fragment shows the the status of the Mars real-estate web services transaction.
@@ -78,6 +80,19 @@ class OverviewFragment : Fragment() {
         inflater.inflate(R.menu.overflow_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.random -> {
+                Toast.makeText(context, "test", Toast.LENGTH_SHORT).show()
+
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 
 
 }

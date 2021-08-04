@@ -15,16 +15,16 @@
  *
  */
 
-package com.example.android.marsrealestate.overview
+package com.example.android.recipeapp.overview
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.marsrealestate.network.MarsApi
+import com.example.android.recipeapp.network.RecipeApi
 //import kotlinx.coroutines.CoroutineScope
 //import kotlinx.coroutines.Dispatchers
 import androidx.lifecycle.viewModelScope
-import com.example.android.marsrealestate.network.MarsProperty
+import com.example.android.recipeapp.network.RecipeProperty
 import kotlinx.coroutines.launch
 
 /**
@@ -41,14 +41,14 @@ class OverviewViewModel : ViewModel() {
         get() = _status
 
     // TODO (03) Add the LiveData MarsProperty property with an internal Mutable and an external LiveData
-    private val _properties = MutableLiveData<List<MarsProperty>>()
+    private val _properties = MutableLiveData<List<RecipeProperty>>()
 
-    val properties: LiveData<List<MarsProperty>>
+    val properties: LiveData<List<RecipeProperty>>
         get() = _properties
 
-    private val _navigateToSelectedProperty = MutableLiveData<MarsProperty>()
+    private val _navigateToSelectedProperty = MutableLiveData<RecipeProperty>()
 
-    val navigateToSelectedProperty: LiveData<MarsProperty>
+    val navigateToSelectedProperty: LiveData<RecipeProperty>
         get() = _navigateToSelectedProperty
 
 
@@ -66,7 +66,7 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsRealEstateProperties() {
         viewModelScope.launch {
             try {
-                var listResult = MarsApi.retrofitService.getProperties()
+                var listResult = RecipeApi.retrofitService.getProperties()
                 // TODO (04) Update to set _property to the first MarsProperty from listResult
                 if (listResult.size > 0) {
                     _properties.value = listResult
@@ -77,7 +77,7 @@ class OverviewViewModel : ViewModel() {
         }
     }
 
-    fun displayPropertyDetails(marsProperty: MarsProperty) {
+    fun displayPropertyDetails(marsProperty: RecipeProperty) {
         _navigateToSelectedProperty.value = marsProperty
     }
 

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package com.example.android.marsrealestate.detail
+package com.example.android.recipeapp.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +22,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.example.android.marsrealestate.databinding.FragmentDetailBinding
+import com.example.android.recipeapp.databinding.FragmentDetailBinding
 
 /**
  * This [Fragment] will show the detailed information about a selected piece of Mars real estate.
@@ -36,9 +36,9 @@ class DetailFragment : Fragment() {
         val binding = FragmentDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
 
-        val marsProperty = DetailFragmentArgs.fromBundle(arguments!!).selectedProperty
+        val recipeProperty = DetailFragmentArgs.fromBundle(arguments!!).selectedProperty
 
-        val viewModelFactory = DetailViewModelFactory(marsProperty, application)
+        val viewModelFactory = DetailViewModelFactory(recipeProperty, application)
         binding.viewModel = ViewModelProviders.of(
                 this, viewModelFactory).get(DetailViewModel::class.java)
         return binding.root

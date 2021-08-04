@@ -15,7 +15,7 @@
  *
  */
 
-package com.example.android.marsrealestate.network
+package com.example.android.recipeapp.network
 
 // import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -26,6 +26,7 @@ import retrofit2.http.GET
 // import kotlinx.coroutines.Deferred
 
 private const val BASE_URL = "http://10.0.2.2"
+
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -47,19 +48,19 @@ private val retrofit = Retrofit.Builder()
 /**
  * A public interface that exposes the [getProperties] method
  */
-interface MarsApiService {
+interface RecipeAppService {
     /**
 
      * The @GET annotation indicates that the "realestate" endpoint will be requested with the GET
      * HTTP method
      */
     @GET("/recipes.json")
-    suspend fun getProperties(): List<MarsProperty>
+    suspend fun getProperties(): List<RecipeProperty>
 }
 
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
-object MarsApi {
-    val retrofitService : MarsApiService by lazy { retrofit.create(MarsApiService::class.java) }
+object RecipeApi {
+    val retrofitService : RecipeAppService by lazy { retrofit.create(RecipeAppService::class.java) }
 }
