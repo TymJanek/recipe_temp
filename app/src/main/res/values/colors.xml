@@ -18,9 +18,9 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#cc7000</color>
-    <color name="colorPrimaryDark">#b36200</color>
-    <color name="colorAccent">#FFC000</color>
-    <color name="backgroundColor">#242426</color>
-    <color name="fontColor">#c9c9cb</color>
+    <color name="colorPrimary">#2DAA42</color>
+    <color name="colorPrimaryDark">#074C16</color>
+    <color name="colorAccent">#30BC37</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="fontColor">#0A0A0B</color>
 </resources>

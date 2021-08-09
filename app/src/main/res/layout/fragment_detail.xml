@@ -31,7 +31,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/backgroundColor"
         tools:context=".DetailFragment">
 
@@ -40,40 +40,71 @@
             android:layout_height="wrap_content"
             android:background="@color/backgroundColor"
             android:orientation="vertical"
-            android:padding="6dp">
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp">
 
 
             <TextView
-                android:id="@+id/id"
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/fontColor"
-                android:textSize="28sp"
-                android:textFontWeight="@android:integer/config_mediumAnimTime"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="30sp"
+                android:textStyle="bold"
                 android:text="@{viewModel.selectedProperty.component2()}"
-                tools:text="sample title"
-                tools:ignore="MissingConstraints" />
+                tools:text="sample title" />
+
+            <View
+                style="@style/Divider"
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
 
             <TextView
-                android:id="@+id/id2"
+                android:id="@+id/ingredients_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/fontColor"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Składniki: "
+                tools:text="sample ingredients desc" />
+
+            <TextView
+                android:id="@+id/ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/fontColor"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@{viewModel.selectedProperty.component4()}"
+                tools:text="sample ingredients"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                style="@style/Divider"
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/fontColor"
                 android:textSize="20sp"
                 android:justificationMode="inter_word"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@{viewModel.selectedProperty.component3()}"
+                android:text="@{viewModel.selectedProperty.component5()}"
                 tools:text="sample desc"
                 tools:ignore="MissingConstraints" />
-
-
 
         </LinearLayout>
     </ScrollView>

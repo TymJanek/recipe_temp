@@ -26,63 +26,113 @@
             type="com.example.android.recipeapp.network.RecipeProperty" />
     </data>
 
-    <GridLayout
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/backgroundColor"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         tools:context=".DetailFragment">
 
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:useDefaultMargins="true">
 
             <ImageView
                 android:id="@+id/user_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/ic_shape"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:layout_gravity="left"
+                app:srcCompat="@drawable/ic_dish"
                 tools:ignore="VectorDrawableCompat"
-                tools:src="@drawable/ic_shape" />
+                tools:src="@drawable/ic_dish" />
 
-            <TextView
-                android:id="@+id/user_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/roboto"
-                android:scaleType="centerCrop"
-                android:text="@{property.component2()}"
-                android:textColor="@color/fontColor"
-                android:textSize="18sp"
-                tools:text="sample title" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:useDefaultMargins="true"
+                android:layout_marginLeft="10dp">
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/roboto"
-                android:scaleType="centerCrop"
-                android:text="@{property.component4()}"
-                android:textColor="@color/fontColor"
-                android:textSize="18sp"
-                tools:text="sample time" />
+                <TextView
+                    android:id="@+id/recipe_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:scaleType="centerCrop"
+                    android:text="@{property.component2()}"
+                    android:textColor="@color/fontColor"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    tools:text="sample title"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/recipe_short_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@{property.component3()}"
+                    android:textColor="@color/fontColor"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    tools:text="sample desc" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="0dp">
+
+                    <ImageView
+                        android:id="@+id/clock_image"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:srcCompat="@drawable/ic_clock"
+                        tools:ignore="VectorDrawableCompat"
+                        tools:src="@drawable/ic_clock" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:scaleType="centerCrop"
+                        android:text="@{property.component6()}"
+                        android:textColor="@color/fontColor"
+                        android:textSize="18sp"
+                        tools:text="sample time"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="2dp"/>
+
+                    <TextView
+                        android:id="@+id/time_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto"
+                        android:scaleType="centerCrop"
+                        android:text="min"
+                        android:textColor="@color/fontColor"
+                        android:textSize="18sp"
+                        tools:text="time desc"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="2dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
 
 
-        </GridLayout>
+    </LinearLayout>
+    <View
+        style="@style/Divider"
+        android:layout_gravity="center"
+        android:layout_margin="10dp" />
 
-
-        <View
-            style="@style/Divider"
-            android:layout_gravity="center"
-            android:layout_margin="10dp" />
-
-    </GridLayout>
+</LinearLayout>
 
 
 </layout>
